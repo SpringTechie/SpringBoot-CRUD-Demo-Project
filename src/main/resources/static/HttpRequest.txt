@@ -1,0 +1,6 @@
+1.Get Request:   It is http protocol to get or retrieve the data from other resource.(webserver,DB)
+2.Post Request:  It is http protocol to create new resource in DB or file or resource.
+3.Put Request:   It is http protocol to update the  existing resource in DB.(it will re-index all the fields).
+4.Patch Request: It is http protocol to update the  existing resource in DB.(it will re-index only updated fields).
+5.Delete Request: It is http protocol to delete the resource in DB.
+
