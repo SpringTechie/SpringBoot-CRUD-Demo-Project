@@ -1,0 +1,5 @@
+spring.jpa.hibernate.ddl-auto = create-drop
+Diff values =
+update = if the table exists, then it won't create the table again.
+create = if the table exists,first it drops the existing table and recreates the table.
+create-drop = if the table exists,first it drops the existing table and recreates the table. but when we stop the application it table is dropped.

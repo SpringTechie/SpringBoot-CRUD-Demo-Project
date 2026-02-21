@@ -1,7 +1,12 @@
 package com.springtechie.crud.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Employee {
 
+    @Id
     private int id;
     private String fname;
     private String lname;
@@ -44,5 +49,8 @@ public class Employee {
         this.fname = fname;
         this.lname = lname;
         this.salary = salary;
+    }
+
+    public Employee() {
     }
 }

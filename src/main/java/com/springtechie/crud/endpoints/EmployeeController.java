@@ -1,6 +1,8 @@
 package com.springtechie.crud.endpoints;
 
 import com.springtechie.crud.models.Employee;
+import com.springtechie.crud.services.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -8,33 +10,30 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class DemoController {
+public class EmployeeController {
+
+    @Autowired
+    private EmployeeService employeeService;
 
     List<Employee> employees = new ArrayList<>();
+
     // to retrieve all emp data
     @GetMapping("/getemps")
     public List<Employee> getEmployees() {
-        return employees;
+        return employeeService.getAllEmployees();
     }
-    // client want to search with empId.
 
-    @GetMapping("/getempId/{id}/{name}")
+    @GetMapping("/getempId/{id}")
     public Employee findEmpById(@PathVariable int id) {
-        Optional<Employee> emp = employees.stream()
-                .filter(e -> e.getId() == id)
-                .findFirst();
-        if(emp.isPresent()) {
-            return emp.get();
-        }
-       return null;
+        return employeeService.getEmployeeById(id);
     }
 
 
     // to create new resource
     @PostMapping("/createemployee")
     public String createEmployee(@RequestBody Employee employee) {
-        employees.add(employee);
-        return "Account created Successully";
+        return employeeService.saveEmployee(employee);
+
     }
 
     @DeleteMapping("/delete/all/emps")
