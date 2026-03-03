@@ -1,0 +1,8 @@
+Bean(object): Bean is nothing but java object which is handled by spring boot.
+creating , deleting, life cycle is managed by springboot.
+How Spring creates beans?
+
+Where spring creates beans?
+Auto-configuration.
+How Spring creates beans?
+How it inject beans?

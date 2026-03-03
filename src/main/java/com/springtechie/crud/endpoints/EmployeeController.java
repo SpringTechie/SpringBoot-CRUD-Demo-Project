@@ -7,17 +7,27 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class EmployeeController {
 
-    @Autowired
-    private EmployeeService employeeService;
+    @Autowired // field level injection
+    private EmployeeService employeeService = new EmployeeService();
+
+    @Autowired // constructor injection
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
+
+    @Autowired // setter injection
+    public void setEmployeeService(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
+
 
     List<Employee> employees = new ArrayList<>();
 
-    // to retrieve all emp data
+    // to retrieve all emp data.
     @GetMapping("/getemps")
     public List<Employee> getEmployees() {
         return employeeService.getAllEmployees();
@@ -29,7 +39,7 @@ public class EmployeeController {
     }
 
 
-    // to create new resource
+    // to create new resource.
     @PostMapping("/createemployee")
     public String createEmployee(@RequestBody Employee employee) {
         return employeeService.saveEmployee(employee);
