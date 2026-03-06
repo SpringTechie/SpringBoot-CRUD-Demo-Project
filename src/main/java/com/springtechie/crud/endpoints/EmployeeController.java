@@ -12,7 +12,7 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired // field level injection
-    private EmployeeService employeeService = new EmployeeService();
+    private EmployeeService employeeService;
 
     @Autowired // constructor injection
     public EmployeeController(EmployeeService employeeService) {
@@ -85,5 +85,10 @@ public class EmployeeController {
         }
         return "Data updated successfully";
 
+    }
+
+    @GetMapping("/findall")
+    public List<Employee> getEmployeeWithSize(@RequestParam int page, @RequestParam int size) {
+       return employeeService.getEmployeesBySize( page,size);
     }
 }
