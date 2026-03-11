@@ -3,7 +3,6 @@ package com.springtechie.crud.models;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.util.concurrent.TimeUnit;
 
 @Service
 public class SchduelingExample {

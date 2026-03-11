@@ -1,5 +1,5 @@
 Logging: By writing logs in application we get to know where the issue occurred and up to which part of the code is executed.
-We use @Slfy4j to write logs.
+We use @Slf4j to write logs.
 Annotate this on top of the class.
 To write the logs use "log" keyword.
 Example: log.info("Hello Raja");
