@@ -3,7 +3,6 @@ package com.springtechie.crud.endpoints;
 
 import com.springtechie.crud.jobs.BackgroundJob;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ReflectiveScan;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
